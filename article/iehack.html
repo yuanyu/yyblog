@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/ymain.css"/>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Yyblog by yuanyu</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="header">
+          <h1>Bubbling Yu</h1>
+          <h3>前端中的小菜鸟，迷茫中的小女生</h3>
+      </div> 
+      <div class="content">
+          <div class="article">
+            <a href="article/iehack.html">
+              <img src="../images/1.jpg" alt="">
+            </a>
+            <div class="article-detail detail-con">
+              <p>
+                IE6&IE7经常会有一些很奇葩的bug出现，那么我们为了兼容效果，要经常对其进行特殊的处理，里面记录了一些项目中出现的bug和一些处理方法
+              </p>
+              <p>1.IE6，IE7解决input边框的问题</p>
+              <pre><code>input{border:none}; /*可以让input在ie8、firefox、safari、chorme没有边框*/
+input{border:0 none};/*ie6、ie7中才有效*/</code></pre>
+              <p>2.IE6中css写滤镜时图片地址写的是当前页面的相对地址,注意目录结构css是和images同级的</p>
+              <pre><code>eg：background:url("../images/1.png") no-repeat;
+_filter:progid:DxImageTransform.Microsoft.AlphaImageLoader(src='images/1.png');</code></pre>
+            <p>3.使用iframe调用页面，在IE下(不包括IE9)会以白色背景显示(被调用页面没有设置背景颜色，以及系统的背景颜色默认为白色)，如何使其透明？</p>
+            <p>在iframe标签上加上<em>allowTransparency="true"</em>属性</p>
+            <p>4.IE6下，fixed浮动较平滑的方法</p>
+            <p>在body上加上如下css属性</p>
+            <pre><code>body{_background-attachment:fixed;_background-image:url(about:blank);}</code></pre>
+            <p>其余还是按照IE6的hack书写即可</p>
+            <p>5.在ie下，用iframe引用视频等元素，例如</p>
+              <pre><code>&lt;embed src="http://cloud.video.taobao.com/video/play/v/2/sid/3xa/f/v.swf" allowFullScreen="true" 
+quality="high" width="640" height="480" align="middle" allowScriptAccess="always" 
+type="application/x-shockwave-flash"></embed></code></pre><p>如果直接写在html结构中，会导致iframe的z-index很高，会遮挡弹窗以及搜索框下拉列表，解决方法是在里面加一个<em>wmode="transparent"</em> 这个属性</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
