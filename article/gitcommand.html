@@ -22,7 +22,7 @@
       <div class="content">
           <div class="article">
             <a href="article/iehack.html">
-              <img src="../images/1.jpg" alt="">
+              <img src="../images/2.jpg" alt="">
             </a>
             <div class="article-detail detail-con">
               <p>
@@ -34,9 +34,9 @@
               <p>1.打开Git客户端</p>
               <p>2.用cd /目录结构打开指定的目录结构，比如cd /d/yuanyu/epromotion</p>
               <p>3.打开git之后，克隆线上的资源到本地，git clone  git://github.com/schacon/grit.git</p>
-              <p>4.克隆完资源之后，用 git status 检查下本地文件有没有更新</p>
-              <p>5.这个时候要创建一个分支，以后的操作都是在分支上进行，比如我们创建一个分支名：叫121224，使用命令行 git branch 121224，就创建好了，一般用于分支和master 文件的切换，如果要切回到master，则命令行为git branch master，我们现在在分支上开发，更新了一些资源</p>
-              <p>6.如果资源有更新，就用 git add .的命令行将新增的内容添加到git上，用 git commit提交更新，然后用 git push origion 121224 </p>
+              <p>4.克隆完资源之后，用 git status -s 检查下本地文件有没有更新</p>
+              <p>5.这个时候要创建一个分支，以后的操作都是在分支上进行，比如我们创建一个分支名：叫121224，使用命令行 git branch 121224，就创建好了，一般用于分支和master 文件的切换，如果要切回到master，则命令行为git branch master，还有一种方式是git checkout -b(branchname)这句命令行是创建新分支，并立即切换到它，我们现在在分支上开发，更新了一些资源</p>
+              <p>6.如果资源有更新，就用 git add .的命令行将新增的内容添加到git上，用 git commit -m提交更新，如果如果你漏掉了 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim，然后用 git push origion 121224</p>
               <p>7.提交到demo  git commit demo </p>
               <p>8.把分支和一起  git merge 121224</p>
               <p>9.把demo推送上去， git push origin demo</p>
